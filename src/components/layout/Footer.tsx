@@ -10,19 +10,20 @@ export default function Footer() {
               <div className="h-8 w-8 rounded-md bg-gradient-to-br from-primary via-accent to-vibrant flex items-center justify-center">
                 <span className="font-bold text-white text-sm">ZW</span>
               </div>
-              <span className="font-bold text-lg tracking-tight">Zukunft-Wellefanzine</span>
+              <span className="font-bold text-lg tracking-tight">Zukunft-Welle Fanzine</span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Ein modernes Technologie-Blog für die digitale Zukunft.
+              Eine digitale Zeitschrift für junge Internationale mit Leidenschaft für STEAM, 
+              Technologie, Kunst und Kultur.
             </p>
           </div>
           
           <div>
             <h3 className="font-semibold mb-4">Kategorien</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/fullstack" className="hover:text-primary transition-colors">Fullstack</Link></li>
-              <li><Link to="/forecasting" className="hover:text-primary transition-colors">Forecasting</Link></li>
-              <li><Link to="/data-science" className="hover:text-primary transition-colors">Data Science</Link></li>
+              <li><Link to="/Codechaos" className="hover:text-primary transition-colors">Codechaos</Link></li>
+              <li><Link to="/Orakel 2.0" className="hover:text-primary transition-colors">Orakel 2.0</Link></li>
+              <li><Link to="/Datenjunkies" className="hover:text-primary transition-colors">Datenjunkies</Link></li>
               <li><Link to="/kuenstliche-intelligenz" className="hover:text-primary transition-colors">Künstliche Intelligenz</Link></li>
             </ul>
           </div>
@@ -30,9 +31,9 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Weitere Themen</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/robotik" className="hover:text-primary transition-colors">Robotik</Link></li>
-              <li><Link to="/human-centered-design" className="hover:text-primary transition-colors">Human-Centered Design</Link></li>
-              <li><Link to="/kunst" className="hover:text-primary transition-colors">Kunst</Link></li>
+              <li><Link to="/Stahlrebellen" className="hover:text-primary transition-colors">Stahlrebellen</Link></li>
+              <li><Link to="/Menschenzentriertes" className="hover:text-primary transition-colors">Menschenzentriertes</Link></li>
+              <li><Link to="/Grenzsprenger" className="hover:text-primary transition-colors">Grenzsprenger</Link></li>
             </ul>
           </div>
           

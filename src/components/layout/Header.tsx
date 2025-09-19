@@ -22,13 +22,13 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { name: 'Fullstack', href: '/fullstack', icon: <Code className="w-5 h-5" /> },
-  { name: 'Forecasting', href: '/forecasting', icon: <LineChart className="w-5 h-5" /> },
-  { name: 'Data Science', href: '/data-science', icon: <Database className="w-5 h-5" /> },
-  { name: 'Künstliche Intelligenz', href: '/kuenstliche-intelligenz', icon: <Brain className="w-5 h-5" /> },
-  { name: 'Robotik', href: '/robotik', icon: <Bot className="w-5 h-5" /> },
-  { name: 'Human-Centered Design', href: '/human-centered-design', icon: <Users className="w-5 h-5" /> },
-  { name: 'Kunst', href: '/kunst', icon: <Palette className="w-5 h-5" /> },
+  { name: 'Codechaos', href: '/Codechaos', icon: <Code className="w-5 h-5" /> },
+  { name: 'Orakel 2.0 ', href: '/Orakel 2.0 ', icon: <LineChart className="w-5 h-5" /> },
+  { name: 'Datenjunkies', href: '/Datenjunkies', icon: <Database className="w-5 h-5" /> },
+  { name: 'Maschinengeflüste', href: '/Maschinengeflüste', icon: <Brain className="w-5 h-5" /> },
+  { name: 'Stahlrebellen', href: '/Stahlrebellen', icon: <Bot className="w-5 h-5" /> },
+  { name: 'Menschenzentriertes Design', href: '/Menschenzentriertes Design', icon: <Users className="w-5 h-5" /> },
+  { name: ' Grenzsprenger', href: '/ Grenzsprenger', icon: <Palette className="w-5 h-5" /> },
 ];
 
 export default function Header() {
