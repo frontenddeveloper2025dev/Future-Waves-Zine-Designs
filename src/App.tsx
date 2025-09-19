@@ -13,7 +13,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/kuenstliche-intelligenz" element={<KIPage />} />
+            <Route path="/ Maschinengeflüster" element={<KIPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Layout>
