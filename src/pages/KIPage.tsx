@@ -4,9 +4,9 @@ import SectionPage from './SectionPage';
 // Mock trending articles
 const trendingArticles = [
   {
-    title: "KI-Halluzinationen: Wie große Sprachmodelle die Realität verzerren",
-    category: "Künstliche Intelligenz",
-    categoryHref: "/kuenstliche-intelligenz",
+    title: "Datenjunkies: Sind Data Scientists die „Orakel“ des 21. Jahrhunderts?",
+    category: "Datenjunkies",
+    categoryHref: "/Datenjunkies",
     href: "/kuenstliche-intelligenz/artikel/ki-halluzinationen"
   },
   {
