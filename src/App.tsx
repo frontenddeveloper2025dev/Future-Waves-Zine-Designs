@@ -1,26 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "@/pages/HomePage";
-import KIPage from "@/pages/KIPage";
-import NotFoundPage from "@/pages/NotFoundPage";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import Layout from "@/components/layout/Layout"; // ✅ asegúrate que esta ruta esté bien
+import SupabaseTest from "./components/SupabaseTest";
 
 function App() {
   return (
-    <TooltipProvider>
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/ Maschinengeflüster" element={<KIPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-      <Toaster />
-    </TooltipProvider>
+    <>
+      <h1>Zukunft Welle Fanzine 🌊</h1>
+      <SupabaseTest />
+      {/* Aquí seguiría tu router u otras páginas */}
+    </>
   );
 }
-
-export default App;
