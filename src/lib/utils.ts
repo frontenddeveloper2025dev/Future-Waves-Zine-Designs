@@ -1,11 +1,14 @@
 // src/lib/utils.ts
 
-// ✅ Helper para clases condicionales (necesario para shadcn/ui o Tailwind)
-export function cn(...classes: (string | undefined | null | false)[]) {
-  return classes.filter(Boolean).join(" ");
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-variants";
+
+// 🧠 Helper universal para unir clases Tailwind de forma inteligente
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
 
-// ✅ Tu formateador de fechas en alemán
+// 📅 Formateador de fechas (alemán)
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
   return date.toLocaleDateString("de-DE", {
