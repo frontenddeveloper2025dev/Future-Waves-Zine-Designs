@@ -1,7 +1,6 @@
-
 import ArticleList from "../components/ui/ArticleList";
-import TrendingSidebar from "../components/TrendingSidebar";
-import TechSpotlight from "../components/home/TechSpotlight"; // ✅ asegúrate de que esta ruta es correcta
+import TrendingSidebar from "../components/home/TrendingSidebar";
+import TechSpotlight from "../components/home/TechSpotlight";
 
 // ✅ Artículos en tendencia (sidebar)
 const trendingArticles = [
