@@ -1,11 +1,16 @@
-import SupabaseTest from "./components/SupabaseTest";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ArticlePage from "./pages/ArticlePage";
+import NotFoundPage from "./pages/NotFoundPage";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <h1>Zukunft Welle Fanzine 🌊</h1>
-      <SupabaseTest />
-      {/* Aquí seguiría tu router u otras páginas */}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/:category/artikel/:slug" element={<ArticlePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
