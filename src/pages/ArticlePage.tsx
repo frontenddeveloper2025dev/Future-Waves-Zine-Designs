@@ -1,76 +1,49 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
 import { supabase } from "../lib/supabaseClient";
 
-type ArticleData = {
-  contenido: string;
-  nombre_imagen: string;
-  categoria: string;
-  slug: string;
-  estado?: string;
-  autor?: string;
-  fecha_publicacion?: string;
-};
-
 export default function ArticlePage() {
-  const { category, slug } = useParams<{ category: string; slug: string }>();
-  const [article, setArticle] = useState<ArticleData | null>(null);
+  const { category, slug } = useParams();
+  const [article, setArticle] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (category && slug) {
-      supabase
+    const fetchArticle = async () => {
+      const { data, error } = await supabase
         .from("articles")
         .select("*")
-        .eq("categoria", category)
         .eq("slug", slug)
-        .single()
-        .then(({ data, error }) => {
-          if (error || !data) {
-            console.error("Error cargando artículo:", error);
-            setArticle(null);
-          } else {
-            setArticle(data);
-          }
-          setLoading(false);
-        });
-    }
-  }, [category, slug]);
+        .eq("categoria", category)
+        .single();
 
-  if (loading) {
-    return (
-      <div className="min-h-[50vh] flex justify-center items-center">
-        <Loader2 className="animate-spin w-8 h-8 text-muted-foreground" />
-      </div>
-    );
-  }
+      if (error) {
+        console.error("❌ Error al obtener el artículo:", error);
+      } else {
+        setArticle(data);
+      }
 
-  if (!article) {
-    return (
-      <div className="text-center py-10 text-red-500">
-        Artículo no encontrado.
-      </div>
-    );
-  }
+      setLoading(false);
+    };
+
+    fetchArticle();
+  }, [slug, category]);
+
+  if (loading) return <p className="text-center mt-10">Cargando artículo...</p>;
+
+  if (!article) return <p className="text-center mt-10">Artículo no encontrado 🕳️</p>;
 
   return (
-    <article className="max-w-3xl mx-auto px-4 py-10">
+    <div className="max-w-3xl mx-auto px-6 py-10">
       <img
-        src={`/images/${category}/${article.nombre_imagen}`}
+        src={article.ruta}
         alt={article.slug}
-        className="rounded-md mb-6 w-full object-cover"
+        className="w-full h-64 object-cover rounded-md mb-6"
       />
-      <h1 className="text-4xl font-bold mb-2">
-        {article.slug.replace(/-/g, " ")}
-      </h1>
-      <p className="text-sm text-muted-foreground mb-6">
-        {article.fecha_publicacion || "Sin fecha"} —{" "}
-        {article.autor || "Anónimo"}
+      <h1 className="text-3xl font-bold mb-4">{article.slug.replace(/-/g, " ")}</h1>
+      <p className="text-muted-foreground text-sm mb-6">
+        {article.fecha_publicacion?.slice(0, 10)} · Por {article.autor}
       </p>
-      <div className="prose max-w-none text-lg leading-relaxed whitespace-pre-line">
-        {article.contenido}
-      </div>
-    </article>
+      <p className="text-lg leading-relaxed whitespace-pre-line">{article.contenido}</p>
+    </div>
   );
 }

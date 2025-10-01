@@ -1,6 +1,9 @@
-<Layout>
-  <Routes>
-    <Route path="/" element={<HomePage />} />
-    ...
-  </Routes>
-</Layout>
+import { Outlet } from "react-router-dom";
+
+export default function Layout() {
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
+}
