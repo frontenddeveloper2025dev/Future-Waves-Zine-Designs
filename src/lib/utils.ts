@@ -1,7 +1,8 @@
 // src/lib/utils.ts
 
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-variants";
+import { type ClassValue } from "clsx";
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge"; // ✅ corregido: tailwind-merge, no tailwind-variants
 
 // 🧠 Helper universal para unir clases Tailwind de forma inteligente
 export function cn(...inputs: ClassValue[]) {
